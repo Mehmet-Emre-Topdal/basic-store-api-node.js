@@ -1,6 +1,5 @@
-Here’s a concise and fully self-contained `README.md` for your project:
 
-```markdown
+
 # Product API
 
 This project is a simple **Node.js API** built with **Express** and **Mongoose** to manage products. It includes features for filtering, sorting, pagination, and field selection, along with a global error handler.
@@ -41,10 +40,12 @@ This project is a simple **Node.js API** built with **Express** and **Mongoose**
     ```
 
 ## API Usage
+
 ### 1. Fetch All Products
 **GET /api/v1/products**
 
 #### Query Parameters:
+
 | Parameter         | Description                                                       | Example                        |
 |-------------------|-------------------------------------------------------------------|--------------------------------|
 | `featured`        | Filter by featured status (`true`/`false`).                       | `featured=true`                |
@@ -61,44 +62,4 @@ This project is a simple **Node.js API** built with **Express** and **Mongoose**
 GET /api/v1/products?featured=true&company=Apple&name=phone&sort=price&fields=name,price&page=2&limit=5
 ```
 
-#### Example Response:
-```json
-{
-  "products": [
-    {
-      "name": "iPhone 13",
-      "price": 999
-    },
-    {
-      "name": "iPhone 14",
-      "price": 1099
-    }
-  ],
-  "nbHits": 2
-}
-```
-
-## Project Structure
-```
-project-folder/
-├── controllers/
-│   └── productController.js    # Handles product-related logic
-├── models/
-│   └── Product.js              # Product schema and model
-├── routes/
-│   └── productRoutes.js        # API routes for products
-├── middleware/
-│   └── errorHandler.js         # Global error handler
-├── app.js                      # Express app setup
-├── server.js                   # Application entry point
-├── .env                        # Environment variables
-├── package.json                # Dependencies and scripts
-└── README.md                   # Project documentation
-```
-
-## Dependencies
-- **express**: For building the API routes.
-- **mongoose**: For MongoDB connection and schema modeling.
-- **express-async-errors**: To handle async errors seamlessly.
-- **dotenv**: To manage environment variables.
-```
+This request would retrieve all products that are featured, from the company "Apple", with "phone" in their name, sorted by price, showing only the fields `name` and `price`, on the second page with a limit of 5 products per page.
